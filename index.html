@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="node_modules/siimple/output.css">
+    <link rel="stylesheet" href="node_modules/siimple-icons/siimple-icons.css">
+
+    <title>UBR Upsin - Login</title>
+  </head>
+  <body class="has-bg-gray-100">
+    <!-- Contenedor hero -->
+    <div class="is-flex has-h-screen has-items-center has-direction-row">
+      
+      <!-- Contenedor hijo izquierdo -->
+      <div class="is-flex has-h-screen has-w-half has-bg-blue-300 has-items-center has-justify-center">
+        <div class="has-size-7 has-weight-black has-text-gray-700">( Colocar el logo aquí )</div>
+      </div>
+      <!-- Fin del contenedor hijo izquierdo -->
+      
+      <!-- Contenedor hijo derecho -->
+      <div class="is-flex has-h-screen has-w-half has-items-center has-bg-gray-100">
+        <div class="has-pl-4 has-pr-4 has-ml-auto has-mr-auto" style="width: 34rem;">
+          <div class="card is-shadowed has-bg-white">
+            <h3 class="has-mt-0 has-mb-4 has-text-center has-text-blue-400">Bienvenido(a)!</h3>
+            <div class="has-mb-6">
+                <label class="label has-text-gray-500"><i class="si-user has-pr-2"></i>Usuario</label>
+                <input type="text" class="input has-bg-gray-200" placeholder="Escribe aquí tu usuario . . ." />
+            </div>
+            <div class="has-mb-6">
+                <label class="label has-text-gray-500"><i class="si-lock has-pr-1"></i>Contraseña</label>
+                <input type="password" class="input has-bg-gray-200" placeholder="Escribe aquí tu contraseña . . ." />
+            </div>
+            <button class="button is-full is-bordered has-text-blue-400 border-blue-400 has-bg-transparent has-bg-blue-400-hover has-text-white-hover">
+                <span>Iniciar sesión</span>
+            </button>
+          </div>
+          <div class="has-mt-8" align="center">
+            <a href="#" class="is-not-underlined has-text-gray-500 has-text-blue-400-hover">
+                <strong>¿Olvidaste tu contraseña?</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Fin del contenedor hijo derecho -->
+
+    </div>
+    <!-- Fin del contenedor hero -->
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
