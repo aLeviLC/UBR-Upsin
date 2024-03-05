@@ -6,39 +6,44 @@
 
     <link rel="stylesheet" href="./src/styles/siimple.css">
     <link rel="stylesheet" href="./src/styles/siimple-icons.css">
+    <link rel="stylesheet" href="src/styles/animations.css">
+
+    <script src="/main.js" type="module"></script>
 
     <title>UBR Upsin - Login</title>
   </head>
-  <body class="has-bg-gray-100">
+  <body class="has-bg-gray-100" style="overflow-y: hidden;">
     <!-- Contenedor hero -->
     <div class="is-flex has-h-screen has-items-center has-direction-row">
       
       <!-- Contenedor hijo izquierdo -->
-      <div class="is-flex has-h-screen has-w-half has-bg-blue-300 has-items-center has-justify-center">
-        <div class="has-size-7 has-weight-black has-text-gray-700">( Colocar el logo aquí )</div>
+      <div class="is-flex has-h-screen has-w-half has-items-center has-justify-center fadeInLeft">
+        <div class="has-size-7 has-weight-black has-text-gray-700">
+          <img src="src/assets/img/logo_ubr.svg" alt="" width="500" height="500">
+        </div>
       </div>
       <!-- Fin del contenedor hijo izquierdo -->
       
       <!-- Contenedor hijo derecho -->
-      <div class="is-flex has-h-screen has-w-half has-items-center has-bg-gray-100">
+      <div class="is-flex has-h-screen has-w-half has-items-center has-bg-gray-100 fadeInUp">
         <div class="has-pl-4 has-pr-4 has-ml-auto has-mr-auto" style="width: 34rem;">
           <div class="card is-shadowed has-bg-white">
-            <h3 class="has-mt-0 has-mb-4 has-text-center has-text-blue-400">Bienvenido(a)!</h3>
-            <div class="has-mb-6">
-                <label class="label has-text-gray-500"><i class="si-user has-pr-2"></i>Usuario</label>
-                <input type="text" class="input has-bg-gray-200" placeholder="Escribe aquí tu usuario . . ." />
+            <h3 class="has-mt-0 has-mb-4 has-text-center has-text-aqua-600">Bienvenido(a)!</h3>
+            <div class="has-mb-4">
+                <label class="label has-text-gray-500"><i class="si-envelope has-pr-2"></i>Correo electronico</label>
+                <input id="correoUsuario" type="text" class="input has-text-gray-500 has-bg-gray-200" placeholder="ejemplo@dominio.mx" />
             </div>
             <div class="has-mb-6">
-                <label class="label has-text-gray-500"><i class="si-lock has-pr-1"></i>Contraseña</label>
-                <input type="password" class="input has-bg-gray-200" placeholder="Escribe aquí tu contraseña . . ." />
+                <label class="label has-text-gray-500"><i class="si-lock has-pr-2"></i>Contraseña</label>
+                <input id="passUsuario" type="password" class="input has-text-gray-500 has-bg-gray-200" placeholder="Ingresa tu contraseña aquí" />
             </div>
-            <button class="button is-full is-bordered has-text-blue-400 border-blue-400 has-bg-transparent has-bg-blue-400-hover has-text-white-hover">
+            <button id="iniciarSesion" class="button is-full is-bordered has-text-aqua-600 border-aqua-600 has-bg-transparent has-bg-aqua-600-hover has-text-white-hover">
                 <span>Iniciar sesión</span>
             </button>
           </div>
           <div class="has-mt-8" align="center">
-            <a href="#" class="is-not-underlined has-text-gray-500 has-text-blue-400-hover">
-                <strong>¿Olvidaste tu contraseña?</strong>
+            <a href="#" class="is-not-underlined has-text-gray-500 has-text-aqua-600-hover">
+                <strong>¿Olvidaste tu usuario / contraseña?</strong>
             </a>
           </div>
         </div>
@@ -48,6 +53,5 @@
     </div>
     <!-- Fin del contenedor hero -->
 
-    <script type="module" src="/main.js"></script>
   </body>
 </html>

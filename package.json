@@ -12,6 +12,7 @@
     "vite": "^5.0.0"
   },
   "dependencies": {
+    "firebase": "^10.8.1",
     "siimple": "^4.3.1",
     "siimple-icons": "^4.3.1"
   }
