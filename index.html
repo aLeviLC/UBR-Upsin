@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svgimage/svg+xml" href="./src/assets/img/logo_ubr.svg">
 
     <link rel="stylesheet" href="./src/styles/siimple.css">
     <link rel="stylesheet" href="./src/styles/siimple-icons.css">
-    <link rel="stylesheet" href="src/styles/animations.css">
+    <link rel="stylesheet" href="./src/styles/animations.css">
+    <link rel="stylesheet" href="./src/styles/toastify.css">
 
-    <script src="/main.js" type="module"></script>
+    <script src="./main.js" type="module"></script>
+    <script src="./src/scripts/toastify.js"></script>
 
     <title>UBR Upsin - Login</title>
   </head>
@@ -37,12 +40,12 @@
                 <label class="label has-text-gray-500"><i class="si-lock has-pr-2"></i>Contraseña</label>
                 <input id="passUsuario" type="password" class="input has-text-gray-500 has-bg-gray-200" placeholder="Ingresa tu contraseña aquí" />
             </div>
-            <button id="iniciarSesion" class="button is-full is-bordered has-text-aqua-600 border-aqua-600 has-bg-transparent has-bg-aqua-600-hover has-text-white-hover">
+            <button id="iniciarSesion" class="button is-full has-text-white has-bg-aqua-600 has-bg-aqua-700-hover">
                 <span>Iniciar sesión</span>
             </button>
           </div>
-          <div class="has-mt-8" align="center">
-            <a href="#" class="is-not-underlined has-text-gray-500 has-text-aqua-600-hover">
+          <div class="forget-pass has-mt-8" align="center">
+            <a class="is-not-underlined button has-text-gray-500 has-text-aqua-600-hover">
                 <strong>¿Olvidaste tu usuario / contraseña?</strong>
             </a>
           </div>
@@ -51,6 +54,21 @@
       <!-- Fin del contenedor hijo derecho -->
 
     </div>
+
+    <div class="scrim is-hidden fadeIn">
+      <div class="modal has-p-8 is-shadowed fadeInUp">
+        <div class="is-flex has-items-center">
+          <h4 class="has-m-0 has-text-aqua-600">¿Olvidaste tu usuario / contraseña?</h4>
+          <div class="close has-ml-auto"></div>
+        </div>
+        <hr class="has-bg-gray-400">
+        <div class="has-mb-4">
+          Contacta a nuestro soporte! - Teléfono: +52(669)2-66-50-10
+        </div>
+        <button class="button is-full has-bg-aqua-600 has-bg-aqua-700-hover">Abrir formulario de contacto</button>
+      </div>
+    </div>
+
     <!-- Fin del contenedor hero -->
 
   </body>
