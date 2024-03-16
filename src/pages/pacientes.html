@@ -3,40 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svgimage/svg+xml" href="../assets/img/logo_ubr.svg">
+    <link rel="icon" type="image/svgimage/svg+xml" href="../assets/img/logo_ubrB.svg">
 
     <link rel="stylesheet" href="../styles/siimple.css">
     <link rel="stylesheet" href="../styles/siimple-icons.css">
     <link rel="stylesheet" href="../styles/animations.css">
 
+    <link rel="stylesheet" href="../Tipografía Volte/Volte-Regular.otf">
+
     <script src="../scripts/logout.js" type="module"></script>
 
-    <title>UBR Upsin - Pacientes</title>
+    <title>UBR Upsin - Historiales clínicos</title>
 </head>
 <body class="has-bg-gray-100">
+
   <div class="is-flex has-h-screen has-direction-column fadeIn">
     <!-- navbar -->
-    <div class="is-flex has-h-16 has-pl-4 has-pr-4 has-pt-4 has-pb-4 has-items-center has-bg-aqua-600 has-text-white">
+    <div class="is-flex has-h-32 has-pl-4 has-pr-4 has-pt-4 has-pb-4 has-items-center has-bg-aqua-600" style="color: #F6F7F9;">
   
-      <a class="is-flex has-items-center has-size-3 has-ml-4 has-text-current">
-        <i class="si-address-book has-size-6 has-mr-2"></i><strong>Pacientes</strong>
-      </a>
-  
-      <div id="navbar-menu" class="is-flex-tablet has-justify-between has-w-full has-mt-4-mobile">
-        <div class="has-ml-auto-tablet has-mt-4-mobile">
-          <a id="logout" class="button is-flex has-items-center has-text-current has-text-gray-200-hover">
-            <strong>Cerrar sesión</strong><i class="si-logout has-size-3 has-ml-2"></i>
+      <div class="is-flex has-items-center has-ml-8 has-w-full navbar">
+        <a class="is-flex">
+        <i class="menu has-size-6 has-mr-12"></i><strong class="has-size-5" style="font-family: 'Volte-Bold'; letter-spacing: 1px;">Historiales clínicos</strong>
+        </a>
+      </div>
+      
+      <div class="is-relative has-mr-24" style="width: 40%;">
+        <div class="has-mr-12">
+          <a>
+            <i class="si-search s-ph has-size-3"></i><input class="input-search" type="text" placeholder="Busca pacientes, padecimiento">
+          </a>
+        </div>
+
+        <div>
+          <a class="has-size-5">
+            <i class="si-filter" style="color: #F6F7F9; position:absolute; right: 0; top: 18%; cursor: pointer;"></i>
           </a>
         </div>
       </div>
   
     </div>
     <!-- Fin del navbar -->
-  
-    <div class="is-flex has-h-full has-items-center has-justify-center">
-      <h3 class="has-m-0 has-text-aqua-600">Bienvenido(a) a la pagina principal</h3>
-    </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;" class="has-h-screen">
+        <div class="is-flex has-justify-center has-items-center">
+          <a class="carpet"></a>
+        </div>
+        <div class="is-flex has-justify-center has-items-center">
+          <center class="has-size-5" style="color: #A4ABB6;">No hay historiales<br>clínicos registrados</center>
+        </div>
+      </div>
+    
+    
+
+
   </div>
 
+  <a href="./agregar-historial-clinico.html" class="add-hc"></a>
 </body>
 </html>

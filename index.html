@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svgimage/svg+xml" href="./src/assets/img/logo_ubr.svg">
+    <link rel="icon" type="image/svgimage/svg+xml" href="./src/assets/img/logo_ubrB.svg">
 
     <link rel="stylesheet" href="./src/styles/siimple.css">
     <link rel="stylesheet" href="./src/styles/siimple-icons.css">
@@ -20,7 +20,7 @@
     <div class="is-flex has-h-screen has-items-center has-direction-row">
       
       <!-- Contenedor hijo izquierdo -->
-      <div class="is-flex has-h-screen has-w-half has-items-center has-justify-center fadeInLeft">
+      <div class="is-flex has-h-screen has-w-half has-items-center has-justify-center fadeInLeft" style="background-color: #1991a9;">
         <div class="has-size-7 has-weight-black has-text-gray-700">
           <img src="src/assets/img/logo_ubr.svg" alt="" width="500" height="500">
         </div>
@@ -31,14 +31,19 @@
       <div class="is-flex has-h-screen has-w-half has-items-center has-bg-gray-100 fadeInUp">
         <div class="has-pl-4 has-pr-4 has-ml-auto has-mr-auto" style="width: 34rem;">
           <div class="card is-shadowed has-bg-white">
-            <h3 class="has-mt-0 has-mb-4 has-text-center has-text-aqua-600">Bienvenido(a)!</h3>
+            <h3 class="has-mt-0 has-mb-4 has-text-center has-text-aqua-600" style="font-family: 'Volte-Bold';">Bienvenido(a)!</h3>
             <div class="has-mb-4">
-                <label class="label has-text-gray-500"><i class="si-envelope has-pr-2"></i>Correo electronico</label>
+                <label class="label has-text-gray-500" style="font-family: 'Volte-Bold';"><i class="si-envelope has-pr-2"></i>Correo electronico</label>
                 <input id="correoUsuario" type="text" class="input has-text-gray-500 has-bg-gray-200" placeholder="ejemplo@dominio.mx" />
             </div>
             <div class="has-mb-6">
-                <label class="label has-text-gray-500"><i class="si-lock has-pr-2"></i>Contraseña</label>
-                <input id="passUsuario" type="password" class="input has-text-gray-500 has-bg-gray-200" placeholder="Ingresa tu contraseña aquí" />
+                <label class="label has-text-gray-500" style="font-family: 'Volte-Bold';"><i class="si-lock has-pr-2"></i>Contraseña</label>
+                <div class="control has-icons-right">
+                  <input id="passUsuario" type="password" class="input has-text-gray-500 has-bg-gray-200" placeholder="Ingresa tu contraseña aquí" />
+                  <span class="ojito" >
+                    <i id="togglePassword" onclick="togglePasswordVisibility()" class="si-eye" style="cursor: pointer;"></i>
+                  </span>
+                </div>
             </div>
             <button id="iniciarSesion" class="button is-full has-text-white has-bg-aqua-600 has-bg-aqua-700-hover">
                 <span>Iniciar sesión</span>
@@ -46,7 +51,7 @@
           </div>
           <div class="forget-pass has-mt-8" align="center">
             <a class="is-not-underlined button has-text-gray-500 has-text-aqua-600-hover">
-                <strong>¿Olvidaste tu usuario / contraseña?</strong>
+                <strong style="font-family: 'Volte-Bold';">¿Olvidaste tu usuario / contraseña?</strong>
             </a>
           </div>
         </div>
@@ -72,4 +77,18 @@
     <!-- Fin del contenedor hero -->
 
   </body>
+  <script>
+    function togglePasswordVisibility() {
+        var passwordField = document.getElementById('passUsuario');
+        var toggleButton = document.getElementById('togglePassword');
+    
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            toggleButton.className = "si-eye-slash";
+        } else {
+            passwordField.type = "password";
+            toggleButton.className = "si-eye";
+        }
+    }
+    </script>
 </html>

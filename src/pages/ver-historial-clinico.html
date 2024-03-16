@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UBR Upsin - Ver historial clínico</title>
+
+  <link rel="icon" type="image/svgimage/svg+xml" href="../assets/img/logo_ubrB.svg">
+
+  <link rel="stylesheet" href="../styles/siimple.css">
+  <link rel="stylesheet" href="../styles/siimple-icons.css">
+  <link rel="stylesheet" href="../styles/animations.css">
+  <link rel="stylesheet" href="../styles/toastify.css">
+
+  <script src="../scripts/historialclinico.js" type="module"></script>
+  <script src="../scripts/toastify.js"></script>
+</head>
+
+<body class="has-bg-gray-100">
+  <div class="is-flex has-h-screen has-direction-column fadeIn">
+    <!-- navbar -->
+    <div class="is-flex has-h-32 has-pl-4 has-pr-4 has-pt-8 has-pb-8 has-items-center has-bg-aqua-600" style="color: #F6F7F9;">
+      <div class="is-flex has-items-center has-ml-8">
+        <a class="is-flex">
+          <a id="return" class="btn-rtn has-mr-12"></a><strong class="has-size-5" style="font-family: 'Volte-Bold'; letter-spacing: 1px;">Ver historial clínico</strong>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Fin del navbar -->
+
+    <div class="has-mt-8 has-mb-auto" style="pointer-events: none; opacity: 0.6; filter: grayscale(100%);">
+
+      <div class="is-flex has-justify-around">
+
+        <div style="width: 25%;">
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Nombre(s):</label>
+          <input id="nombres" type="text" class="input has-bg-gray-200" placeholder="Ejemplo: Juan" />
+          <p></p>
+          <p style="color: #1991a9; font-size: 85%;">Máximo de caracteres disponibles: De 0 a 20</p>
+        </div>
+        <div style="width: 25%;">
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Apellido paterno:</label>
+          <input id="apellidoPa" type="text" class="input has-bg-gray-200" placeholder="Ejemplo: Pérez" />
+          <p></p>
+          <p style="color: #1991a9; font-size: 85%;">Máximo de caracteres disponibles: De 0 a 15</p>
+        </div>
+        <div style="width: 25%;">
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Apellido materno:</label>
+          <input id="apellidoMa" type="text" class="input has-bg-gray-200" placeholder="Ejemplo: Gonzalez" />
+          <p></p>
+          <p style="color: #1991a9; font-size: 85%;">Máximo de caracteres disponibles: De 0 a 15</p>
+        </div>
+
+      </div>
+
+      <div class="is-flex has-justify-around has-pl-6 has-pr-6">
+
+        <div style="width: 20%;">
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Fecha de nacimiento:</label>
+          <input id="fechaNa" type="date" class="input has-bg-gray-200" placeholder="Ejemplo: 2003-10-04" />
+        </div>
+        <div style="width: 20%;">
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Municipio de origen:</label>
+          <select id="municipio" class="input has-bg-gray-200"></select>
+        </div>
+        <div style="width: 20%;">
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Estado de origen:</label>
+          <select id="estadO" class="input has-bg-gray-200"></select>
+        </div>
+        <div style="width: 20%;">
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Sexo:</label>
+          <select id="sexo" class="input has-bg-gray-200"></select>
+        </div>
+
+      </div>
+
+      <br>
+
+      <div class="is-flex has-justify-around has-pl-6 has-pr-6">
+
+        <div style="width: 20%;">
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Teléfono:</label>
+          <input id="telefono" type="tel" class="input has-bg-gray-200" placeholder="Ejemplo: 6692053510" />
+        </div>
+        <div style="width: 20%;">
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Ocupación:</label>
+          <input id="ocupacion" type="text" class="input has-bg-gray-200" placeholder="Ejemplo: Estudiante" />
+        </div>
+        <div style="width: 20%;">
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Entidad de salud:</label>
+          <select id="Entsalud" class="input has-bg-gray-200"></select>
+        </div>
+        <div style="width: 20%;">
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Contacto de emergencia:</label>
+          <input id="teleme" type="tel" class="input has-bg-gray-200" placeholder="Ejemplo: 6691349723" />
+        </div>
+      </div>
+
+      <!-- checkbox1 -->
+      <div class="is-flex has-justify-around has-pl-12 has-pr-12">
+        <div style="width: 48%;">
+          <br>
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Antecedentes hereditarios:</label>
+          <div class="has-bg-gray-200 has-p-2 is-rounded">
+
+            <div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">DM:</span>
+                <div class="has-ml-auto is-not-allowed">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">P</span>
+                  <input type="checkbox" id="pdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">M</span>
+                  <input type="checkbox" id="mdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">HAS:</span>
+                <div class="has-ml-auto is-not-allowed">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">P</span>
+                  <input type="checkbox" id="pdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">M</span>
+                  <input type="checkbox" id="mdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">IAM:</span>
+                <div class="has-ml-auto is-not-allowed">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">P</span>
+                  <input type="checkbox" id="pdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">M</span>
+                  <input type="checkbox" id="mdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">ASMA:</span>
+                <div class="has-ml-auto is-not-allowed">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">P</span>
+                  <input type="checkbox" id="pdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">M</span>
+                  <input type="checkbox" id="mdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">ARTRITIS:</span>
+                <div class="has-ml-auto is-not-allowed">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">P</span>
+                  <input type="checkbox" id="pdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">M</span>
+                  <input type="checkbox" id="mdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">NEOPLASIS:</span>
+                <div class="has-ml-auto is-not-allowed">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">P</span>
+                  <input type="checkbox" id="pdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">M</span>
+                  <input type="checkbox" id="mdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">CARDIOPATIAS:</span>
+                <div class="has-ml-auto is-not-allowed">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">P</span>
+                  <input type="checkbox" id="pdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">M</span>
+                  <input type="checkbox" id="mdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">EPILEPSIA:</span>
+                <div class="has-ml-auto is-not-allowed">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">P</span>
+                  <input type="checkbox" id="pdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                  <span class="has-mr-1 has-ml-1 has-text-gray-600 checkdis" style="font-family: 'Volte-Bold';">M</span>
+                  <input type="checkbox" id="mdm" class="checkbox checkdis" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="has-m-3">
+                <label class="label has-text-gray-600 has-bg-muted" style="font-family: 'Volte-Bold';">OTROS:</label>
+                <input type="text" id="dm" class="input-line" placeholder="Ninguna" style="width: 98%;" />
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- checkBOX2 -->
+        <div style="width: 48%;">
+          <br>
+          <label class="label has-text-gray-600" style="font-family: 'Volte-Bold';">Antecedentes patológicos:</label>
+          <div class="has-bg-gray-200 has-p-2 is-rounded">
+
+            <div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">DM:</span>
+                <div class="has-ml-auto">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+              
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">HAS:</span>
+                <div class="has-ml-auto">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">FRACTURAS:</span>
+                <div class="has-ml-auto">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">TABAQUISMO:</span>
+                <div class="has-ml-auto">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">ALCOHOLISMO:</span>
+                <div class="has-ml-auto">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="is-flex has-m-3 has-content-center">
+                <span class="span has-text-gray-600" style="font-family: 'Volte-Bold';">TRANSFUCIONES:</span>
+                <div class="has-ml-auto">
+                  <input type="checkbox" id="dm" class="checkbox" style="border: 2px solid #747C8B;" />
+                </div>
+              </div>
+
+              <div class="has-m-3">
+                <label class="label has-mr-2 has-text-gray-600 has-bg-muted" style="font-family: 'Volte-Bold';">CIRUGIAS:</label>
+                <input type="text" id="dm" class="input-line" placeholder="Ninguna" style="width: 98%;" />
+              </div>
+
+              <div class="has-m-3">
+                <label class="label has-mr-2 has-text-gray-600 has-bg-muted" style="font-family: 'Volte-Bold';">ALERGIAS:</label>
+                <input type="text" id="dm" class="input-line" placeholder="Ninguna" style="width: 98%;" />
+              </div>
+              <p></p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br>
+
+</body>
+
+</html>

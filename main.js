@@ -8,7 +8,7 @@ document.getElementById('iniciarSesion').addEventListener('click', async (e) => 
 
   try {
     const credentials = await signInWithEmailAndPassword(auth, correoUsuario, passUsuario);
-    window.location.href = './src/pages/pacientes.html';
+    window.location.href = '/src/pages/pacientes.html';
     console.log(credentials);
   } catch (error) {
     Toastify({
