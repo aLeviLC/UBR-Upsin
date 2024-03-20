@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="../styles/siimple.css">
     <link rel="stylesheet" href="../styles/siimple-icons.css">
     <link rel="stylesheet" href="../styles/animations.css">
-    <link rel="stylesheet" href="../styles/menu.css">
 
     <link rel="stylesheet" href="../Tipografía Volte/Volte-Regular.otf">
 
@@ -24,26 +23,7 @@
   
       <div class="is-flex has-items-center has-ml-8 has-w-full navbar">
         <a class="is-flex">
-          <div class="navigation">
-            <button class="hamburger" onclick="show()">
-                <div id="bar1" class="bar"></div>
-                <div id="bar2" class="bar"></div>
-                <div id="bar3" class="bar"></div>
-            </button>
-    
-            <nav>
-                <ul>
-                    <img src="../assets/img/logo_ubrB.svg" alt="" width="70" height="70" style="position: relative; left: 200px; bottom: 55px;">
-                    <li><a>Home</a></li>
-                    <li><a>About</a></li>
-                    <li><a>Blog</a></li>
-                    <li><a>Contact</a></li>
-                    <li class="logoutt"><a class="logoutt" id="logout"><i class="si-logout" style="margin-right: 75px;"></i>Logout</a></li>
-                </ul>
-            </nav>
-    
-        </div>
-        <strong class="has-size-5 has-ml-16" style="font-family: 'Volte-Bold'; letter-spacing: 1px;">Historiales clínicos</strong>
+        <i class="menu has-size-6 has-mr-12"></i><strong class="has-size-5" style="font-family: 'Volte-Bold'; letter-spacing: 1px;">Historiales clínicos</strong>
         </a>
       </div>
       
@@ -80,10 +60,4 @@
 
   <a href="./agregar-historial-clinico.html" class="add-hc"></a>
 </body>
-<script>
-  function show(){
-    document.querySelector('.hamburger').classList.toggle('open')
-    document.querySelector('.navigation').classList.toggle('active')
-}
-</script>
 </html>

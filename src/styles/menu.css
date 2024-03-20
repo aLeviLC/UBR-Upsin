@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a, button {
+    cursor: pointer;
+}
+
+nav {
+    position: absolute;
+    top: 700px;
+    right: 50px;
+    width: 250px;
+}
+
+.navigation {
+    position: absolute;
+    overflow-y: hidden;
+    left: -500px;
+    width: 350px;
+    height: 1360px;
+    background-color: #F6F7F9;
+    box-shadow: 0 0px 20px 0.3px gray;
+    border-left: 0;
+    transition: .5s;
+    opacity: 0.9;
+    z-index: 100;
+}
+
+.navigation ul li {
+    color: #252525;
+    transition: all 0.3s;
+    text-align: right;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 1.5em;
+    padding: 20px 30px;
+    border-bottom: 1pt solid #252525;
+}
+
+.navigation ul li:hover{
+    color: #1991a9;
+    scale: 105%;
+    text-align: right;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 1.5em;
+    padding: 20px 30px;
+    border-bottom: 1pt solid #1991a9;
+}
+
+.logoutt{
+    color: rgb(190, 8, 8);
+    text-align: right;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 1.5em;
+    padding: 20px 30px;
+    margin-top: 140px;
+    border-bottom: hidden;
+}
+
+.logoutt:hover{
+    color: rgb(100, 0, 0);
+    text-align: right;
+    text-transform: uppercase;
+    list-style-type: none;
+    font-size: 1.5em;
+    padding: 20px 30px;
+    margin-top: 160px;
+    border-bottom: hidden;
+}
+
+.hamburger,
+.bar {
+    position: fixed;
+}
+
+.hamburger {
+    display: block;
+    top: 57px;
+    left: 40px;
+    width: 30px;
+    height: 30px;
+    transform: translateY(-50%);
+    border: 0;
+    background: 0 0;
+}
+
+.bar {
+    top: 3px;
+    background: #FFF;
+    width: 27px;
+    height: 4px;
+    transition: all .3s ease-in;
+}
+
+#bar2 {
+    top: 11px;
+}
+
+#bar3 {
+    top: 19px;
+}
+
+.navigation.active {
+    left: 0;
+}
+
+.hamburger.open #bar1 {
+    background-color: #1991a9;
+    transform: rotate(45deg) translate(6px, 5px);
+    box-shadow: 0 0px 30px 0.5px gray;
+}
+
+.hamburger.open #bar2 {
+    background-color: transparent;
+}
+
+.hamburger.open #bar3 {
+    background-color: #1991a9;
+    transform: rotate(-45deg) translate(6px, -5px);
+    box-shadow: 0 0px 30px 0.3px gray;
+}
